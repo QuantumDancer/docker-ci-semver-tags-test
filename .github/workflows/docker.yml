@@ -42,9 +42,10 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            QuantumDancer/docker-ci-semver-tags-test
+            quantumdancer/docker-ci-semver-tags-test
             ghcr.io/QuantumDancer/docker-ci-semver-tags-test
           tags: |
+            type=edge,branch=main
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/v0.') }}
