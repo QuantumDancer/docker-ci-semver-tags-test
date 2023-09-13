@@ -56,7 +56,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: containers/${{ matrix.containers }}/Dockerfile
+          file: Dockerfile
           push: ${{ github.repository == 'QuantumDancer/docker-ci-semver-tags-test' && github.ref == 'refs/heads/main' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
